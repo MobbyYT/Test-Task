@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Тестове Завдання</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/dark-mode.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="theme-toggle">
+                <span class="slider-text">🌞</span>
+                <input type="checkbox" id="theme-slider" />
+                <label for="theme-slider" class="slider"></label>
+                <span class="slider-text">🌜</span>
+            </div>
+        </header>
+        <div class="debt-list" id="debt-list"></div>
+        <div class="debt-form hidden" id="debt-form">
+            <button class="close-button" onclick="closeForm()">&#10005;</button>
+            <input type="text" id="name" placeholder="Назва боргу" required />
+            <input type="text" id="date" placeholder="дд/мм/рррр" required />
+            <input type="text" id="debtor" placeholder="Хто твій боржник" required />
+            <button id="submit-debt">Додати борг</button>
+        </div>
+        <button id="btn" class="button">+</button>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+            flatpickr("#date", {
+                dateFormat: "d/m/Y",
+                altInput: true,
+                altFormat: "d/m/Y",
+                /* allowInput: true,
+                maxDate: "31/12/9999",
+                minDate: "01/01/0001",
+                onChange: function (selectedDates, dateStr, instance) {
+                    if (formattedDate.length === 2 || formattedDate.length === 5) {
+                        formattedDate += "/";
+                    }
+                    instance.altInput.value = formattedDate;
+                },*/ //Проблема з вводом( великий код, якщо робити перевірку в максимальне число 31 для дня , а місяця 12 )
+            });
+        </script>
+        <script src="scripts.js"></script>
+    </body>
+</html>

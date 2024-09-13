@@ -1,0 +1,24 @@
+List of things of what to do:
+
+1. Push first version to GitHub Reposetory. (Missed)
+2. Edit ReadMe file for a user understanding (Inprogress)
+3. Add function to add the same person if he was added twice (Unknown)
+4. Add Multiple delete option setting to delete multiple debt lists boxes. (Inprogress)
+
+Known issues:
+
+1. Fix header with Debt List, they overlap each other. (FIXED)
+2. Theme slider is not working properly with text .(FIXED)
+3. When entering creating debt menu and not touching date it's bugged . You need to choose the same date again to not receive alerts! (Need to find a solution to fix it)
+
+Things that I done:
+
+1. Add Local storage (Done)
+2. Edit "Edit" tab in "..." for it to look more pleasant (Done)
+3. Add Header. (FIXED& DONE)
+4. Add Style Header (Done)
+5. Add button to load your debts to persistant storage (Unnecessary) (Done) (Removed)
+6. Make positing in DEBT-LIST correct (Done)
+7. Think about more task of what to do... (OK)
+8. Added cross to close menu (Done)
+9. Added Theme slider (Done)

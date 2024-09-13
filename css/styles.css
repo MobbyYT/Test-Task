@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding-top: 80px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #d400ff;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: background-color 0.3s;
+}
+
+.debt-container {
+    width: 100%;
+    max-width: 1200px;
+    height: calc(100vh - 80px);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.debt-list {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.debt-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: calc(25% - 20px);
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.options-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 24px;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.options-button:hover {
+    color: #333;
+}
+
+.options-menu {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    transform: translateY(-50%);
+}
+
+.options-menu button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #d400ff;
+}
+
+.debt-form {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+.debt-form input,
+.debt-form button {
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.debt-form button {
+    background-color: #d400ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.debt-form button:hover,
+.button:hover {
+    background-color: #a502c5;
+}
+
+.button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #d400ff;
+    color: white;
+    font-size: 36px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.close-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 24px;
+    color: #888;
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#confirm-delete {
+    background-color: #d400ff;
+    color: white;
+}
+
+#cancel-delete {
+    background-color: lightgray;
+    color: black;
+}
+
+.menu-icon {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.debt-item input[type="checkbox"] {
+    margin-right: 10px;
+    display: none;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle input {
+    display: none;
+}
+
+.theme-toggle .slider {
+    width: 50px;
+    height: 25px;
+    background-color: lightgray;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-toggle .slider:before {
+    content: " ";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 21px;
+    height: 21px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.theme-toggle input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+.slider-text {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+    .debt-item {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .debt-item {
+        width: calc(50% - 20px);
+    }
+
+    .debt-form {
+        bottom: 20px;
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .button {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .debt-item {
+        width: calc(100% - 20px);
+    }
+
+    .debt-form {
+        bottom: 20px;
+        width: 100%;
+        left: 0;
+        transform: none;
+    }
+
+    .button {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+body.night-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.night-mode .header {
+    background-color: #333;
+}
+
+body.night-mode .debt-list {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+}
+
+body.night-mode .debt-item {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+body.night-mode .options-menu {
+    background-color: #333;
+    color: #fff;
+}
+body.night-mode .debt-form {
+    background-color: #333;
+    color: #fff;
+}
+
+body.night-mode .modal-content {
+    background-color: #333;
+    color: #fff;
+}
