@@ -65,6 +65,7 @@ body {
     font-size: 18px;
     position: relative;
     margin-bottom: 20px;
+    transition: transform 0.2s, opacity 0.2s;
 }
 
 .options-button {
@@ -260,6 +261,38 @@ body {
     font-size: 14px;
 }
 
+body.night-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.night-mode .header {
+    background-color: #333;
+}
+
+body.night-mode .debt-list {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+}
+
+body.night-mode .debt-item {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+body.night-mode .options-menu {
+    background-color: #333;
+    color: #fff;
+}
+body.night-mode .debt-form {
+    background-color: #333;
+    color: #fff;
+}
+
+body.night-mode .modal-content {
+    background-color: #333;
+    color: #fff;
+}
 @media (max-width: 1024px) {
     .debt-item {
         width: calc(33.333% - 20px);
@@ -306,36 +339,8 @@ body {
         font-size: 24px;
     }
 }
-
-body.night-mode {
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-}
-
-body.night-mode .header {
-    background-color: #333;
-}
-
-body.night-mode .debt-list {
-    background-color: #2a2a2a;
-    border: 1px solid #444;
-}
-
-body.night-mode .debt-item {
-    background-color: #2a2a2a;
-    color: white;
-}
-
-body.night-mode .options-menu {
-    background-color: #333;
-    color: #fff;
-}
-body.night-mode .debt-form {
-    background-color: #333;
-    color: #fff;
-}
-
-body.night-mode .modal-content {
-    background-color: #333;
-    color: #fff;
+.drag-image {
+    position: absolute;
+    pointer-events: none; /* Prevent interaction */
+    z-index: 1000; /* Keep it on top */
 }
