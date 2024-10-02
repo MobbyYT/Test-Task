@@ -10,6 +10,12 @@
     <body>
         <div id="root"></div>
         <header class="header">
+            <div class="language-slider">
+                <input type="radio" id="en" name="language" value="en" />
+                <label for="en">EN</label>
+                <input type="radio" id="ua" name="language" value="ua" />
+                <label for="ua">UA</label>
+            </div>
             <div class="theme-toggle">
                 <span class="slider-text">🌞</span>
                 <input type="checkbox" id="theme-slider" />
@@ -25,6 +31,7 @@
             <input type="text" id="debtor" placeholder="Хто твій боржник" required />
             <button id="submit-debt">Додати борг</button>
         </div>
+        <script src="scripts.js"></script>
         <button id="btn" class="button">+</button>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>
