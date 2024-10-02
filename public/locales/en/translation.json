@@ -1,0 +1,12 @@
+{
+    "debt": {
+        "name": "Debt Name",
+        "date": "dd/mm/yyyy",
+        "debtor": "Who is your debtor",
+        "addDebt": "Add Debt"
+    },
+    "theme": {
+        "day": "🌞",
+        "night": "🌜"
+    }
+}

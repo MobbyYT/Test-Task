@@ -216,3 +216,26 @@ function saveOrderToStorage() {
     });
     localStorage.setItem("debts", JSON.stringify(debts));
 }
+
+import React from "react";
+import ReactDOM from "react-dom";
+import App from ".App";
+
+ReactDom.render(<App />, document.getElementsById("root"));
+
+import { useTranslation } from "react-i18next";
+
+const DebtForm = () => {
+    const { t } = useTranslation();
+
+    return (
+        <div>
+            <input type="text" id="name" placeholder={t("debt.name")} required />
+            <input type="text" id="date" placeholder={t("debt.date")} required />
+            <input type="text" id="debtor" placeholder={t("debt.debtor")} required />
+            <button id="submit-debt">{t("debt.addDebt")}</button>
+        </div>
+    );
+};
+
+export default DebtForm;
